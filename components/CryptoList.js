@@ -58,9 +58,6 @@ export default function CryptoList() {
                 Date Added: {new Date(crypto.date_added).toLocaleDateString()}
               </Text>
               <Text>Price: {crypto.quote.USD.price.toFixed(2)}</Text>
-              {/* <Text>Max Supply: {formatNumber(crypto.max_supply)}</Text>
-
-              <Text>Total Supply: {formatNumber(crypto.total_supply)}</Text> */}
             </View>
           </LinearGradient>
         ))}
