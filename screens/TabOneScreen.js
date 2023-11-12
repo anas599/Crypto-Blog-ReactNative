@@ -1,7 +1,7 @@
 import { StyleSheet, ActivityIndicator } from "react-native";
 
 import { Text, View } from "../components/Themed";
-import CryptoList from "../components/top3";
+import CryptoList from "../components/CryptoList";
 export default function TabOneScreen() {
   return (
     <>
