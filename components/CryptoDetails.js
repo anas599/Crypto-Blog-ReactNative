@@ -1,35 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheets } from "../components/Themed";
 import { styles } from "../screens/TabOneScreen";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchData, selectData } from "../redux/apiSlice";
 
 function CryptoDetails({ route }) {
   const [crypto, setCrypto] = useState(null);
+  const dataRedux = useSelector(selectData);
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-CMC_PRO_API_KEY": "7974008e-e711-40f4-8b21-42c19b00e602",
-      },
-    };
-    const fetchQuote = async () => {
-      try {
-        const response = await fetch(
-          "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=5&convert=USD",
-          options
-        );
-        const data = await response.json();
-        const selectedCrypto = data.data.find(
-          (crypto) => crypto.id === route.params.id
-        );
-        setCrypto(selectedCrypto);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchQuote();
-  }, [route.params.id]);
+    const selectedCrypto = dataRedux.data.find(
+      (crypto) => crypto.id === route.params.id
+    );
+    setCrypto(selectedCrypto);
+  }, [route.params.id, dataRedux.data]);
   return (
     <>
       <View style={styles.container}>
