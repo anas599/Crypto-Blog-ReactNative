@@ -1,12 +1,14 @@
-import { StyleSheet, ActivityIndicator, Button } from "react-native";
+import { StyleSheet, ActivityIndicator, Button, Image } from "react-native";
 import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Text, View } from "./Themed";
 import { useDispatch, useSelector } from "react-redux";
-
 import { LinearGradient } from "expo-linear-gradient";
 import formatNumber from "../functions/formatNumber";
 import { fetchData, selectData } from "../redux/apiSlice";
+function toLowerCase(string) {
+  return string.toLowerCase();
+}
 export default function CryptoList() {
   const navigation = useNavigation();
   const [loading, setLoading] = useState(true);
@@ -31,6 +33,15 @@ export default function CryptoList() {
             style={styles.linearGradient}
           >
             <View style={styles.innerContainer}>
+              <Image
+                source={{
+                  uri: `https://coinicons-api.vercel.app/api/icon/${toLowerCase(
+                    crypto.symbol
+                  )}`,
+                }}
+                style={{ width: 30, height: 30 }}
+              />
+
               <Text style={{ fontSize: 20, fontWeight: "bold" }}>
                 {crypto.name}
               </Text>
@@ -90,7 +101,7 @@ const styles = StyleSheet.create({
     color: "green",
   },
   linearGradient: {
-    height: 150,
+    height: 200,
     width: 200,
     borderRadius: 20,
     margin: 5,
@@ -99,7 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 15, // <-- Inner Border Radius
     flex: 1,
     margin: 5, // <-- Border Width
-    backgroundColor: "#fff",
+    backgroundColor: "#2d3748",
     justifyContent: "center",
     alignItems: "center",
     padding: 5,
