@@ -23,7 +23,7 @@ export default function CryptoList() {
   }
   return (
     <>
-      <>
+      <View style={styles.container}>
         {dataRedux.data.map((crypto) => (
           <LinearGradient
             key={crypto.id}
@@ -42,36 +42,41 @@ export default function CryptoList() {
                 style={{ width: 30, height: 30 }}
               />
 
-              <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+              <Button
+                title={crypto.name}
+                style={{ fontSize: 20, fontWeight: "bold" }}
+                onPress={() =>
+                  navigation.navigate("CryptoDetails", { id: crypto.id })
+                }
+              >
                 {crypto.name}
-              </Text>
+              </Button>
+              <Text>{crypto.symbol}</Text>
               <Text>
-                Circulating Supply: {formatNumber(crypto.circulating_supply)}
+                Cir. Supply: {formatNumber(crypto.circulating_supply)}
               </Text>
               <Text>
                 Date Added: {new Date(crypto.date_added).toLocaleDateString()}
               </Text>
-              <Text>Max Supply: {formatNumber(crypto.max_supply)}</Text>
-              <Text>Symbol: {crypto.symbol}</Text>
-              <Text>Total Supply: {formatNumber(crypto.total_supply)}</Text>
-              <Button
-                title={crypto.name}
-                onPress={() =>
-                  navigation.navigate("CryptoDetails", { id: crypto.id })
-                }
-                key={crypto.id}
-              />
+              <Text>Price: {crypto.quote.USD.price.toFixed(2)}</Text>
+              {/* <Text>Max Supply: {formatNumber(crypto.max_supply)}</Text>
+
+              <Text>Total Supply: {formatNumber(crypto.total_supply)}</Text> */}
             </View>
           </LinearGradient>
         ))}
-      </>
+      </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
     padding: 20,
     alignItems: "center",
     justifyContent: "center",
@@ -101,19 +106,19 @@ const styles = StyleSheet.create({
     color: "green",
   },
   linearGradient: {
-    height: 200,
-    width: 200,
+    height: 180,
+    width: 160,
     borderRadius: 20,
-    margin: 5,
+    margin: 4,
   },
   innerContainer: {
     borderRadius: 15, // <-- Inner Border Radius
     flex: 1,
-    margin: 5, // <-- Border Width
+    margin: 4, // <-- Border Width
     backgroundColor: "#2d3748",
     justifyContent: "center",
     alignItems: "center",
-    padding: 5,
+    padding: 3,
   },
   buttonText: {
     fontSize: 18,
