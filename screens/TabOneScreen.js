@@ -1,13 +1,13 @@
-import { StyleSheet, ActivityIndicator } from "react-native";
+import { StyleSheet, ActivityIndicator, ScrollView } from "react-native";
 
-import { Text, View } from "../components/Themed";
+import { Text } from "../components/Themed";
 import CryptoList from "../components/CryptoList";
 export default function TabOneScreen() {
   return (
-    <>
-      <View style={styles.container}></View>
+    <ScrollView>
+      {/* <View style={styles.container}></View> */}
       <CryptoList />
-    </>
+    </ScrollView>
   );
 }
 
@@ -32,6 +32,16 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "red",
   },
+  textBorder: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "white",
+    borderColor: "white",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 5,
+    margin: 5,
+  },
   textNumber: {
     fontSize: 16,
     fontWeight: "bold",
@@ -41,5 +51,11 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "green",
+  },
+  userName: {
+    fontSize: 16,
+    fontWeight: "bold",
+    fontStyle: "italic",
+    color: "white",
   },
 });
