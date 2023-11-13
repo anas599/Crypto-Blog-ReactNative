@@ -5,12 +5,12 @@ module.exports = function (api) {
       [
         "babel-preset-expo",
         {
-          // Use React 17 automatic JSX runtime.
           jsxRuntime: "automatic",
         },
       ],
     ],
     plugins: [
+      "nativewind/babel",
       "react-native-reanimated/plugin",
       [
         "module:react-native-dotenv",
