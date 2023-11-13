@@ -6,9 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { LinearGradient } from "expo-linear-gradient";
 import formatNumber from "../functions/formatNumber";
 import { fetchData, selectData } from "../redux/apiSlice";
-function toLowerCase(string) {
-  return string.toLowerCase();
-}
+import toLowerCase from "../functions/toLowerCase";
 export default function CryptoList() {
   const navigation = useNavigation();
   const [loading, setLoading] = useState(true);
