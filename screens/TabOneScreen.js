@@ -5,7 +5,6 @@ import CryptoList from "../components/CryptoList";
 export default function TabOneScreen() {
   return (
     <ScrollView>
-      {/* <View style={styles.container}></View> */}
       <CryptoList />
     </ScrollView>
   );
