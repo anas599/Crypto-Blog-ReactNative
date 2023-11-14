@@ -16,9 +16,10 @@ export default function CryptoList() {
   useEffect(() => {
     dispatch(fetchData()).then(() => setLoading(false));
   }, [dispatch]);
-  if (loading) {
+  if (loading || !dataRedux.data) {
     return <ActivityIndicator size="large" color="#0000ff" />;
   }
+
   return (
     <>
       <View style={styles.container}>
