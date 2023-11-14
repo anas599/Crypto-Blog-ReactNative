@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const fetchComments = createAsyncThunk("api/fetchComments", async () => {
-    const response = await axios.get('https://crypto-blog-nextjs.netlify.app/api/comments', {
+    const response = await axios.get((process.env.COMMENTS_API), {
         
     });
 
