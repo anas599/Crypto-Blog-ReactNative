@@ -7,7 +7,7 @@ import toLowerCase from "../functions/toLowerCase";
 import { selectData } from "../redux/apiSlice";
 import { Image } from "react-native";
 import formatNumber from "../formatNumber";
-
+import CommentForm from "./CommentForm";
 function CryptoDetails({ route }) {
   const [crypto, setCrypto] = useState(null);
   const dataRedux = useSelector(selectData);
@@ -80,6 +80,7 @@ function CryptoDetails({ route }) {
           </>
         )}
       </View>
+      <CommentForm />
     </>
   );
 }
