@@ -9,22 +9,6 @@ module.exports = function (api) {
         },
       ],
     ],
-    plugins: [
-      "nativewind/babel",
-      "react-native-reanimated/plugin",
-      [
-        "module:react-native-dotenv",
-        {
-          moduleName: "@env",
-          path: ".env",
-          blocklist: null,
-          allowlist: null,
-          blacklist: null, // DEPRECATED
-          whitelist: null, // DEPRECATED
-          safe: false,
-          allowUndefined: true,
-        },
-      ],
-    ],
+    plugins: [["module:react-native-dotenv"]],
   };
 };
