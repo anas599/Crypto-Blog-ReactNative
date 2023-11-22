@@ -1,5 +1,4 @@
 import { StyleSheet, ActivityIndicator } from "react-native";
-import { useEffect, useState } from "react";
 
 import { Text, View } from "../components/Themed";
 import CryptoList from "../components/top3";
