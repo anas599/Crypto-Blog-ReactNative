@@ -2,7 +2,7 @@ import { useEffect,useState } from "react";
 import { initializeApp, getApp } from "firebase/app";
 import { initializeAuth, getAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
-import varapi from "./functions/test";
+
 
 
 
