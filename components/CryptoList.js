@@ -68,7 +68,6 @@ export default function CryptoList() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     display: "flex",
     justifyContent: "center",
     flexDirection: "row",
@@ -108,9 +107,9 @@ const styles = StyleSheet.create({
     margin: 4,
   },
   innerContainer: {
-    borderRadius: 15, // <-- Inner Border Radius
+    borderRadius: 15,
     flex: 1,
-    margin: 4, // <-- Border Width
+    margin: 4,
     backgroundColor: "#2d3748",
     justifyContent: "center",
     alignItems: "center",
