@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const fetchData = createAsyncThunk("api/fetchData", async () => {
-    const response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=20&convert=USD', {
+    const response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=25&convert=USD', {
         headers: {
             "X-CMC_PRO_API_KEY": process.env.PRO_API_KEY,
         },
