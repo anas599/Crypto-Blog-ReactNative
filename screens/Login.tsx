@@ -56,10 +56,7 @@ const CommentForm = () => {
           value={email}
         />
       </KeyboardAvoidingView>
-      <Button
-        title="alert test"
-        onPress={() => Alert.alert("Simple Button pressed")}
-      />
+
       <TextInput
         style={styles.input}
         placeholder="Password"
