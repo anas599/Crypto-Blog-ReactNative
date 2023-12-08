@@ -67,16 +67,8 @@ const CommentForm = () => {
         <Text>Loading...</Text>
       ) : (
         <>
-          <Button
-            style={styles.button}
-            title="Login"
-            onPress={() => signIn()}
-          />
-          <Button
-            style={styles.button}
-            title="SignUp"
-            onPress={() => signUp()}
-          />
+          <Button title="Login" onPress={() => signIn()} />
+          <Button title="SignUp" onPress={() => signUp()} />
         </>
       )}
     </View>
