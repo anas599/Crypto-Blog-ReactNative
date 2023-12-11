@@ -49,7 +49,7 @@ function CryptoDetails({ route }) {
   useEffect(() => {
     onAuthStateChanged(FIREBASE_AUTH, (user) => {
       setUser(user);
-      console.log(user);
+      // console.log(user);
     });
   }, []);
   function FullCryptoDetails() {
