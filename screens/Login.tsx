@@ -49,9 +49,12 @@ const CommentForm = () => {
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView behavior="padding">
+        <Text style={styles.text}>Enter your email and password</Text>
+
         <TextInput
           style={styles.input}
           placeholder="Email"
+          placeholderTextColor="grey"
           onChangeText={(text) => setEmail(text)}
           value={email}
         />
@@ -60,6 +63,7 @@ const CommentForm = () => {
       <TextInput
         style={styles.input}
         placeholder="Password"
+        placeholderTextColor="grey"
         onChangeText={(text) => setPassword(text)}
         value={password}
       />
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     padding: 10,
     marginBottom: 3,
+    color: "#000",
   },
   button: {
     backgroundColor: "#000",
@@ -94,6 +99,12 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#fff",
+  },
+  text: {
+    color: "#000",
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom: 10,
   },
 });
 export default CommentForm;
