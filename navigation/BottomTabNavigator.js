@@ -10,8 +10,16 @@ const TabOneStack = createStackNavigator();
 function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
-      <TabOneStack.Screen name="TabOneScreen" component={TabOneScreen} />
-      <TabOneStack.Screen name="CryptoDetails" component={CryptoDetails} />
+      <TabOneStack.Screen
+        name="TabOneScreen"
+        component={TabOneScreen}
+        options={{ headerShown: false }}
+      />
+      <TabOneStack.Screen
+        name="CryptoDetails"
+        component={CryptoDetails}
+        options={{ headerShown: false }}
+      />
     </TabOneStack.Navigator>
   );
 }
@@ -19,8 +27,8 @@ function TabOneNavigator() {
 export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="TabOne" component={TabOneNavigator} />
-      <BottomTab.Screen name="TabTwo" component={TabTwoScreen} />
+      <BottomTab.Screen name="Crypto" component={TabOneNavigator} />
+      <BottomTab.Screen name="Exchanges" component={TabTwoScreen} />
     </BottomTab.Navigator>
   );
 }
