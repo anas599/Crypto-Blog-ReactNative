@@ -9,7 +9,7 @@ import {
   Alert,
   KeyboardAvoidingView,
 } from "react-native";
-import { Formik, Field } from "formik";
+// import { Formik, Field } from "formik";
 import { useState } from "react";
 import { FIREBASE_AUTH } from "../firebaseConfig";
 import {
