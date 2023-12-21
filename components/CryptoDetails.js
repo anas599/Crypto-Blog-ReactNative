@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheets } from "../components/Themed";
-import { styles } from "../screens/TabOneScreen";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchComments, selectComments } from "../redux/commentsSlice";
 import toLowerCase from "../functions/toLowerCase";
