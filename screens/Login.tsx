@@ -1,8 +1,9 @@
 import React from "react";
+import { Button, ButtonGroup, withTheme } from "@rneui/themed";
+
 import {
   TextInput,
   View,
-  Button,
   TouchableOpacity,
   Text,
   StyleSheet,
@@ -71,8 +72,36 @@ const CommentForm = () => {
         <Text>Loading...</Text>
       ) : (
         <>
-          <Button title="Login" onPress={() => signIn()} />
-          <Button title="SignUp" onPress={() => signUp()} />
+          <Button
+            title="Login"
+            onPress={() => signIn()}
+            buttonStyle={{
+              backgroundColor: "black",
+              borderWidth: 2,
+              borderColor: "white",
+              borderRadius: 30,
+            }}
+            containerStyle={{
+              marginHorizontal: 80,
+              marginVertical: 10,
+            }}
+            titleStyle={{ fontWeight: "bold" }}
+          />
+          <Button
+            title="SignUp"
+            onPress={() => signUp()}
+            buttonStyle={{
+              backgroundColor: "black",
+              borderWidth: 2,
+              borderColor: "white",
+              borderRadius: 30,
+            }}
+            containerStyle={{
+              marginHorizontal: 80,
+              marginVertical: 10,
+            }}
+            titleStyle={{ fontWeight: "bold" }}
+          />
         </>
       )}
     </View>
@@ -87,9 +116,10 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
+    borderRadius: 10,
     borderColor: "#000",
     padding: 10,
-    marginBottom: 3,
+    marginVertical: 10,
     color: "#000",
   },
   button: {
