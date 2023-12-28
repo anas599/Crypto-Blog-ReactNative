@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup, withTheme } from "@rneui/themed";
+import { Button } from "@rneui/themed";
 
 import {
   TextInput,
@@ -10,7 +10,6 @@ import {
   Alert,
   KeyboardAvoidingView,
 } from "react-native";
-// import { Formik, Field } from "formik";
 import { useState } from "react";
 import { FIREBASE_AUTH } from "../firebaseConfig";
 import {
